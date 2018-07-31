@@ -1,17 +1,5 @@
-changeColor.onclick = function(element) {
-  let color = element.target.value;
+chat.onclick = function(element) {
   chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.executeScript(
-        tabs[0].id,
-        {code: `
-          function injectScript(file, node) {
-              var th = document.getElementsByTagName(node)[0];
-              var s = document.createElement('script');
-              s.setAttribute('type', 'text/javascript');
-              s.setAttribute('src', file);
-              th.appendChild(s);
-          }
-          injectScript( chrome.extension.getURL('kay.js'), 'body');
-        `});
+    chrome.tabs.executeScript({file: 'btn.js'});
   });
 };

@@ -3,9 +3,8 @@ chrome.runtime.onInstalled.addListener(function() {
     chrome.declarativeContent.onPageChanged.addRules([{
       conditions: [new chrome.declarativeContent.PageStateMatcher({
         pageUrl: {urlMatches: '^(https?:\/\/)?(www\.)?steamcommunity\.com\/(profiles|id)\/[a-zA-Z0-9_-]+\/?$'},
-      })
-      ],
-          actions: [new chrome.declarativeContent.ShowPageAction()]
+      })],
+        actions: [new chrome.declarativeContent.ShowPageAction()]
     }]);
   });
 });
